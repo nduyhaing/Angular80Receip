@@ -1,0 +1,30 @@
+{
+  "name": "ng-cookbook-second-edition",
+  "version": "1.0.0",
+  "description": "## Generate Projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "sh scripts/run-tests.sh",
+    "e2e": "sh scripts/run-e2e.sh",
+    "postinstall": "cd codewithahsan && npm i --legacy-peer-deps && cd .. && concurrently \"cd start && npm i --legacy-peer-deps\"  \"cd final && npm i --legacy-peer-deps\"",
+    "serve": "sh scripts/serve-projects.sh",
+    "serve:prod": "sh scripts/serve-projects-prod.sh",
+    "serve:fake-be": "cd ./codewithahsan && npx nx serve fake-be",
+    "create": "sh scripts/create-projects.sh",
+    "remove": "sh scripts/remove-projects.sh",
+    "copy": "sh scripts/copy-start-to-final.sh",
+    "copy:styles": "sh scripts/copy-styles.sh",
+    "serve:ng-jest-setup": "cd start/apps/chapter10/ng-jest-setup && npm start -- -o",
+    "test:ng-jest-setup": "cd start/apps/chapter10/ng-jest-setup && npm t",
+    "build": "sh scripts/build.sh",
+    "serve:static": "sh scripts/serve-static.sh",
+    "sanity": "sh scripts/sanity.sh"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^29.2.4",
+    "concurrently": "^7.6.0"
+  }
+}
